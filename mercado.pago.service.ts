@@ -19,7 +19,7 @@ export class MercadoPagoService {
     return this.http.get(this.apiUrl + `/payment_methods/search?public_key=${this.publicToken}&bins=${bin}&marketplace=NONE&status=active`);
   }
 
-  public getInstallments(paymentMethodId: number, amount: number) {
+  public getInstallments(paymentMethodId: string, amount: number) {
     return this.http.get(this.apiUrl + `/payment_methods/installments?` +
       `public_key=${this.publicToken}&payment_method_id=${paymentMethodId}&amount=${amount}`);
   }
